@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     # add user defined apps
-    "leads",
+    "Leads",
     "rest_framework",
 ]
 

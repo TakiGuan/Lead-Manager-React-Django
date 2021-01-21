@@ -1,3 +1,11 @@
+"""
+Description: URL for LeadManager project
+Version: 1
+Author: Taki Guan
+Date: 2021-01-21 21:45:48
+LastEditors: Taki Guan
+LastEditTime: 2021-01-21 22:52:29
+"""
 """LeadManager URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -14,8 +22,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("", include("Leads.urls")),
 ]
