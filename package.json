@@ -4,8 +4,8 @@
   "description": "This is a demo Django and React project just to learn",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development ./LeadManager/Frontend/src/index.js --output /LeadManager/Frontend/static/frontend/main.js",
-    "build": "webpack --mode production ./LeadManager/Frontend/src/index.js --output /LeadManager/Frontend/static/frontend/main.js"
+    "dev": "webpack --mode development --watch --entry ./LeadManager/Frontend/src/index.js --output-path ./LeadManager/Frontend/static/frontend/",
+    "build": "webpack --mode production --entry ./LeadManager/Frontend/src/index.js --output-path ./LeadManager/Frontend/static/frontend/"
   },
   "repository": {
     "type": "git",
@@ -22,14 +22,26 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "pretty-quick": "^3.1.0",
     "webpack": "^5.16.0",
     "webpack-cli": "^4.4.0"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   }
 }

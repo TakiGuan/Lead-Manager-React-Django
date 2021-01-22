@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # add user defined apps
     "Leads",
+    "Frontend",
     "rest_framework",
 ]
 
