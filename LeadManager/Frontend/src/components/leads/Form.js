@@ -4,7 +4,7 @@
  * @Author: Taki Guan
  * @Date: 2021-01-22 10:59:53
  * @LastEditors: Taki Guan
- * @LastEditTime: 2021-01-22 17:04:12
+ * @LastEditTime: 2021-01-22 22:22:06
  */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
@@ -30,7 +30,12 @@ export class Form extends Component {
     e.preventDefault();
     const { name, email, message } = this.state;
     const lead = { name, email, message };
-    // TODO
+    this.props.addLead(lead);
+    this.setState({
+      name: '',
+      email: '',
+      message: '',
+    });
   };
 
   render() {
