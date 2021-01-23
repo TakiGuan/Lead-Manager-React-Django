@@ -4,15 +4,15 @@
  * @Author: Taki Guan
  * @Date: 2021-01-22 12:31:17
  * @LastEditors: Taki Guan
- * @LastEditTime: 2021-01-22 16:55:04
+ * @LastEditTime: 2021-01-23 15:04:13
  */
-import { GET_LEADS, DELETE_LEAD, ADD_LEAD } from '../actions/types.js';
+import { GET_LEADS, DELETE_LEAD, ADD_LEAD } from '../actions/types';
 
 const initialState = {
   leads: [],
 };
 
-export default function (state = initialState, action) {
+export default function leads(state = initialState, action) {
   switch (action.type) {
     case GET_LEADS:
       return {

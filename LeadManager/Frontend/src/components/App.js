@@ -4,18 +4,19 @@
  * @Author: Taki Guan
  * @Date: 2021-01-22 10:43:12
  * @LastEditors: Taki Guan
- * @LastEditTime: 2021-01-23 11:36:02
+ * @LastEditTime: 2021-01-23 12:17:06
  */
 import React, { Component, Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 
 import { transitions, positions, Provider as AlertProvider } from 'react-alert';
 import AlertTemplate from 'react-alert-template-basic';
 
 import Header from './layout/Header';
 import Dashboard from './leads/Dashboard';
+import Alerts from './layout/Alerts';
 
-import { Provider } from 'react-redux';
 import store from '../store';
 
 const alertOptions = {
@@ -32,6 +33,7 @@ class App extends Component {
         <AlertProvider template={AlertTemplate} {...alertOptions}>
           <Fragment>
             <Header />
+            <Alerts />
             <div className="container">
               <Dashboard />
             </div>

@@ -36,6 +36,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "eslint": "^7.18.0",
+    "prettier": "^2.2.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-alert": "^7.0.2",

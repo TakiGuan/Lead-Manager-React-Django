@@ -4,7 +4,7 @@
  * @Author: Taki Guan
  * @Date: 2021-01-22 10:24:39
  * @LastEditors: Taki Guan
- * @LastEditTime: 2021-01-22 10:54:42
+ * @LastEditTime: 2021-01-23 12:09:12
  */
 import React, { Component } from 'react';
 
@@ -21,7 +21,7 @@ export class Header extends Component {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <a className="navbar-brand" href="#">

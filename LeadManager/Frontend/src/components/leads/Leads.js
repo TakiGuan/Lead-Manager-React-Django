@@ -1,10 +1,15 @@
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable react/button-has-type */
+/* eslint-disable react/jsx-one-expression-per-line */
+/* eslint-disable react/jsx-wrap-multilines */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /*
  * @Description: Leads JS
  * @Version: 1
  * @Author: Taki Guan
  * @Date: 2021-01-22 11:00:18
  * @LastEditors: Taki Guan
- * @LastEditTime: 2021-01-22 16:17:33
+ * @LastEditTime: 2021-01-23 17:00:56
  */
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
@@ -37,24 +42,22 @@ export class Leads extends Component {
             </tr>
           </thead>
           <tbody>
-            {this.props.leads.map((lead) => {
-              return (
-                <tr key={lead.id}>
-                  <td> {lead.id} </td>
-                  <td> {lead.name} </td>
-                  <td> {lead.email} </td>
-                  <td> {lead.message} </td>
-                  <td>
-                    <button
-                      onClick={this.props.deleteLead.bind(this, lead.id)}
-                      className="btn btn-danger btn-sm"
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
+            {this.props.leads.map((lead) => (
+              <tr key={lead.id}>
+                <td> {lead.id} </td>
+                <td> {lead.name} </td>
+                <td> {lead.email} </td>
+                <td> {lead.message} </td>
+                <td>
+                  <button
+                    onClick={this.props.deleteLead.bind(this, lead.id)}
+                    className="btn btn-danger btn-sm"
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </Fragment>
