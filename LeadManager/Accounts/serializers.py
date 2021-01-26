@@ -1,11 +1,11 @@
-'''
+"""
 Description: Accounts Serializers File
 Version: 1
 Author: Taki Guan
 Date: 2021-01-25 11:49:20
 LastEditors: Taki Guan
 LastEditTime: 2021-01-25 15:02:43
-'''
+"""
 # 用户 Serializer
 from rest_framework import serializers
 from django.contrib.auth.models import User
