@@ -4,10 +4,14 @@
  * @Author: Taki Guan
  * @Date: 2021-01-27 13:39:49
  * @LastEditors: Taki Guan
- * @LastEditTime: 2021-01-28 10:37:32
+ * @LastEditTime: 2021-01-29 14:16:01
  */
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { register } from '../../actions/auth';
+import { createMessage } from '../../actions/messages';
 
 export class Register extends Component {
   state = {
@@ -17,9 +21,22 @@ export class Register extends Component {
     passwordConfirm: '',
   };
 
+  static propTypes = {
+    register: PropTypes.func.isRequired,
+    isAuthenticated: PropTypes.bool,
+  };
+
   onSubmit = (e) => {
     e.preventDefault();
-    console.log('Submit');
+
+    const { username, email, password, passwordConfirm } = this.state;
+
+    if (password !== passwordConfirm) {
+      this.props.createMessage({ passwordNotMatch: 'Passwords do not match' });
+    } else {
+      const user = { username, email, password };
+      this.props.register(user);
+    }
   };
 
   onChange = (e) => {
@@ -29,6 +46,10 @@ export class Register extends Component {
   };
 
   render() {
+    if (this.props.isAuthenticated) {
+      return <Redirect to="/" />;
+    }
+
     const { username, email, password, passwordConfirm } = this.state;
 
     return (
@@ -92,4 +113,8 @@ export class Register extends Component {
   }
 }
 
-export default Register;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { register, createMessage })(Register);
